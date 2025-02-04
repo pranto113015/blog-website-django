@@ -1,0 +1,36 @@
+git clone https://github.com/pranto113015/blog-website-django.git
+
+
+
+mkvirtualenv --python=/usr/bin/python3.8 venv
+
+pip install -r requirements.txt
+
+
+
+ /static/      /home/PKCSE/blog-website-django/myapp/static
+
+ /media/    /home/PKCSE/blog-website-django/media_root/
+
+
+
+import os
+import sys
+
+path = os.path.expanduser('~/blog-website-django')
+
+if path not in sys.path: sys.path.insert(0, path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'myproject.settings'
+
+from django.core.wsgi import get_wsgi_application
+
+from django.contrib.staticfiles.handlers import StaticFilesHandler 
+application = StaticFilesHandler(get_wsgi_application())
+
+
+
+
+
+Username : admin
+Password : pk123456
